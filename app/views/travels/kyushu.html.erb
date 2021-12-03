@@ -1,0 +1,37 @@
+<h1>tripenjoy</h1>
+<h3>九州</h3>
+
+<h3>地域-九州</h3>
+
+<%= link_to '投稿', new_travel_path %>
+
+<div class="travels-container">
+<% @travels.each do |travel| %>
+    <div class="travel">
+
+    <%= image_tag travel.image_url, size: "250x200" if travel.image? %>
+
+    <%= t.user.email %>
+      <%= travel.area %>
+      <%= travel.created_at %>
+
+      <%= link_to "詳細へ", travel_path(travel.id) %>
+      <%= link_to "編集する", edit_travel_path(travel.id) %>
+      <%= link_to "新規登録", new_user_registration_path %>
+      <%= button_to "削除する", travel_path(travel.id), method: :delete %>
+    </div>
+<% end %>
+</div>
+<%= link_to "北海道", travels_hokkaido_path %>
+<%= link_to "東北", travels_tohoku_path %>
+<%= link_to "北関東", travels_kitakanto_path %>
+<%= link_to "首都圏", travels_shutoken_path %>
+<%= link_to "伊豆・箱根", travels_izuhakone_path %>
+<%= link_to "甲信越", travels_koshinetu_path %>
+<%= link_to "北陸", travels_hokuriku_path %>
+<%= link_to "東海", travels_tokai_path %>
+<%= link_to "近畿", travels_kinki_path %>
+<%= link_to "中国", travels_chugoku_path %>
+<%= link_to "四国", travels_shikoku_path %>
+<%= link_to "九州", travels_kyushu_path %>
+<%= link_to "沖縄", travels_okinawa_path %>　

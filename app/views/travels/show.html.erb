@@ -1,0 +1,10 @@
+<h1>Travelenjoy</h1>
+<h3>Travel詳細</h3>
+<div class="travel">
+  <p><%= @travel.area %></p>
+  <p><%= @travel.created_at %></p>
+</div>
+
+<%= link_to "Travel一覧に戻る", travels_path %>
+
+<%= link_to "編集する", edit_travel_path(@travel.id) %>

@@ -1,0 +1,29 @@
+<h1>日本旅ネット</h1>
+<h3>新規Travel</h3>
+<%= form_for @travel do |travel| %>
+  <div class="field">
+    <%= travel.label :area %>
+    <%= travel.text_field :area, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= travel.label :image %>
+    <%= travel.file_field :image %>
+    <%= travel.select :category, [
+      ["北海道", "hokkaido"],
+      ["東北", "tohoku"],
+      ["北関東", "kitakanto"],
+      ["首都圏", "shutoken"],
+      ["伊豆・箱根", "izuhakone"],
+      ["甲信越", "kousinnetu"],
+      ["北陸", "hokuriku"],
+      ["東海", "toukai"],
+      ["近畿", "kinki"],
+      ["中国", "chuugoku"],
+      ["四国", "shikoku"],
+      ["九州", "kyuushuu"],
+      ["沖縄", "okinawa"],
+    ], include_blank: "どの地域？" %>
+  </div>
+  <%= travel.submit "追加する" %>
+<% end %>
+<%= link_to "一覧に戻る", travels_path %>
